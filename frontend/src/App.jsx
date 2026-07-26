@@ -101,9 +101,6 @@ const RESUME_ITEMS = [
   { icon: <HiOutlineLightBulb />, label: 'Certifications' },
 ]
 
-/* ============================================
-   FADE-IN ON SCROLL WRAPPER
-============================================ */
 function Reveal({ children, delay = 0, y = 30 }) {
   return (
     <motion.div
@@ -117,9 +114,6 @@ function Reveal({ children, delay = 0, y = 30 }) {
   )
 }
 
-/* ============================================
-   NAVBAR
-============================================ */
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -208,9 +202,6 @@ function Navbar() {
   )
 }
 
-/* ============================================
-   HERO / PROFILE
-============================================ */
 function Hero() {
   return (
     <section id="home" className="hero">
@@ -288,9 +279,6 @@ function Hero() {
   )
 }
 
-/* ============================================
-   ABOUT
-============================================ */
 function About() {
   return (
     <section id="about" className="section">
@@ -305,7 +293,7 @@ function About() {
             <div className="about-text">
               <p>
                 I'm an AI & Machine Learning Engineer and Full Stack Developer currently pursuing my
-                BE in Artificial Intelligence & Machine Learning at Rajarajeshwari College of Engineering,
+                BE in Artificial Intelligence & Machine Learning at Rajarajeswari College of Engineering,
                 Bengaluru.
               </p>
               <p>
@@ -337,9 +325,6 @@ function About() {
   )
 }
 
-/* ============================================
-   SKILLS
-============================================ */
 function Skills() {
   return (
     <section id="skills" className="section">
@@ -371,9 +356,6 @@ function Skills() {
   )
 }
 
-/* ============================================
-   PROJECTS
-============================================ */
 function Projects() {
   return (
     <section id="projects" className="section">
@@ -417,9 +399,6 @@ function Projects() {
   )
 }
 
-/* ============================================
-   RESUME
-============================================ */
 function Resume() {
   return (
     <section id="resume" className="section">
@@ -455,9 +434,6 @@ function Resume() {
   )
 }
 
-/* ============================================
-   CONTACT
-============================================ */
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
   const [status, setStatus] = useState({ state: 'idle', message: '' })
@@ -480,7 +456,7 @@ function Contact() {
       const data = await res.json()
 
       if (res.ok && data.success) {
-        setStatus({ state: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
+        setStatus({ state: 'success', message: "Message sent successfully! I'll get back to you soon." })
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
         setStatus({ state: 'error', message: data.error || 'Something went wrong. Please try again.' })
@@ -604,9 +580,6 @@ function Contact() {
   )
 }
 
-/* ============================================
-   FOOTER
-============================================ */
 function Footer() {
   const [showTop, setShowTop] = useState(false)
 
@@ -644,9 +617,6 @@ function Footer() {
   )
 }
 
-/* ============================================
-   APP
-============================================ */
 export default function App() {
   return (
     <>
