@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: www.vighneshportfolio.site/sitemap.xml
+Sitemap: https://vighneshportfolio.site/sitemap.xml
