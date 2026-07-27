@@ -188,7 +188,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <img src="/profile.jpg" alt="V S Vighnesh" className="profile-img" />
+          <img src="/profile.png" alt="V S Vighnesh" className="profile-img" />
           <div className="profile-info">
             <h3>V S Vighnesh</h3>
             <p>AI & Machine Learning Engineer</p>
