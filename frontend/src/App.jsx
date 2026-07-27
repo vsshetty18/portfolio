@@ -152,7 +152,7 @@ function Navbar() {
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               
-                href={`#${link.id}`}
+                <a href={`#${link.id}`}
                 className={activeSection === link.id ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault()
