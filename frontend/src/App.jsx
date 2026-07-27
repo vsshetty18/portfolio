@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import {
   FiMail, FiPhone, FiGithub, FiLinkedin, FiMenu, FiX,
-  FiArrowUp, FiDownload, FiExternalLink, FiChevronDown
+  FiArrowUp, FiDownload, FiExternalLink
 } from 'react-icons/fi'
 import {
-  SiPython, SiJavascript, SiHtml5, SiCss3, SiMysql, SiReact,
-  SiNodedotjs, SiExpress, SiNextdotjs, SiTensorflow, SiOpenai,
-  SiGit, SiGithub, SiVercel, SiRender
+  SiPython, SiMysql, SiReact, SiGit
 } from 'react-icons/si'
-import { FaJava, FaBrain, FaRobot, FaCode, FaLaptopCode, FaCodeBranch } from 'react-icons/fa'
+import { FaBrain, FaRobot, FaCode, FaLaptopCode, FaCodeBranch } from 'react-icons/fa'
 import { HiOutlineLightBulb, HiOutlineAcademicCap } from 'react-icons/hi'
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
@@ -66,31 +64,11 @@ const HIGHLIGHTS = [
 ]
 
 const SKILLS = [
-  {
-    category: 'Languages',
-    icon: <FaCode />,
-    items: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS'],
-  },
-  {
-    category: 'Database',
-    icon: <SiMysql />,
-    items: ['SQL', 'MySQL'],
-  },
-  {
-    category: 'Frameworks',
-    icon: <SiReact />,
-    items: ['React', 'Node.js', 'Express', 'Next.js'],
-  },
-  {
-    category: 'AI / ML',
-    icon: <FaBrain />,
-    items: ['TensorFlow', 'OpenAI', 'HuggingFace', 'Computer Vision', 'Machine Learning'],
-  },
-  {
-    category: 'Tools',
-    icon: <SiGit />,
-    items: ['Git', 'GitHub', 'VS Code', 'Render', 'Vercel'],
-  },
+  { category: 'Languages', icon: <FaCode />, items: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS'] },
+  { category: 'Database', icon: <SiMysql />, items: ['SQL', 'MySQL'] },
+  { category: 'Frameworks', icon: <SiReact />, items: ['React', 'Node.js', 'Express', 'Next.js'] },
+  { category: 'AI / ML', icon: <FaBrain />, items: ['TensorFlow', 'OpenAI', 'HuggingFace', 'Computer Vision', 'Machine Learning'] },
+  { category: 'Tools', icon: <SiGit />, items: ['Git', 'GitHub', 'VS Code', 'Render', 'Vercel'] },
 ]
 
 const RESUME_ITEMS = [
@@ -122,10 +100,8 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40)
-
       const sections = NAV_LINKS.map((l) => document.getElementById(l.id))
       const scrollPos = window.scrollY + 150
-
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
         if (section && section.offsetTop <= scrollPos) {
@@ -151,8 +127,8 @@ function Navbar() {
         <ul className="nav-links">
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
-              
-                <a href={`#${link.id}`}
+              <a
+                href={`#${link.id}`}
                 className={activeSection === link.id ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault()
@@ -185,7 +161,7 @@ function Navbar() {
         >
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
-              
+              <a
                 href={`#${link.id}`}
                 onClick={(e) => {
                   e.preventDefault()
@@ -217,7 +193,7 @@ function Hero() {
             <h3>V S Vighnesh</h3>
             <p>AI & Machine Learning Engineer</p>
             <p>Full Stack Developer</p>
-            <p>BE AIML — Rajarajeshwari College of Engineering</p>
+            <p>BE AIML — Rajarajeswari College of Engineering</p>
             <p>Bengaluru, India</p>
             <div className="profile-socials">
               <a href="mailto:vsvighnesh18@gmail.com" className="social-icon" aria-label="Email"><FiMail /></a>
@@ -244,7 +220,7 @@ function Hero() {
             <a href="/resume.pdf" download className="btn btn-primary">
               <FiDownload /> Download Resume
             </a>
-            
+            <a
               href="#projects"
               className="btn btn-outline"
               onClick={(e) => {
@@ -254,7 +230,7 @@ function Hero() {
             >
               View Projects
             </a>
-            
+            <a
               href="#contact"
               className="btn btn-outline"
               onClick={(e) => {
