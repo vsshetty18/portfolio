@@ -28,6 +28,7 @@ const PROJECTS = [
     tags: ['React', 'Node.js', 'AI', 'OCR'],
     live: 'https://fotocopy-sage.vercel.app',
     github: 'https://github.com/vsshetty18',
+    image: '/projects/fotocopy.png',
   },
   {
     title: 'Anything AI',
@@ -35,6 +36,7 @@ const PROJECTS = [
     tags: ['React', 'OpenAI', 'Node.js'],
     live: 'https://anything-ai-wine.vercel.app',
     github: 'https://github.com/vsshetty18',
+    image: '/projects/anything-ai.png',
   },
   {
     title: 'Indian GST Calculator',
@@ -42,6 +44,7 @@ const PROJECTS = [
     tags: ['React', 'JavaScript', 'CSS'],
     live: 'https://indian-gst-calculator-mu.vercel.app',
     github: 'https://github.com/vsshetty18',
+    image: '/projects/gst-calculator.png',
   },
   {
     title: 'LifeSaver',
@@ -49,6 +52,7 @@ const PROJECTS = [
     tags: ['React', 'Node.js', 'Express'],
     live: 'https://life-saver-ten.vercel.app',
     github: 'https://github.com/vsshetty18',
+    image: '/projects/lifesaver.png',
   },
 ]
 
@@ -348,7 +352,21 @@ function Projects() {
           {PROJECTS.map((project, i) => (
             <Reveal delay={i * 0.1} key={project.title}>
               <div className="project-card">
-                <div className="project-image">{project.title.charAt(0)}</div>
+                <div className="project-image">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      onError={(e) => {
+                        e.target.style.display = 'none'
+                        e.target.nextSibling.style.display = 'flex'
+                      }}
+                    />
+                  ) : null}
+                  <span className="project-fallback" style={{ display: project.image ? 'none' : 'flex' }}>
+                    {project.title.charAt(0)}
+                  </span>
+                </div>
                 <div className="project-body">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
